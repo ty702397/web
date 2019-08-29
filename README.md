@@ -1,7 +1,7 @@
 # web-learn
 
 #### 介绍
-前端一些示例
+uploadimges 第一版简易图片上传程序，使用layui+php
 
 #### 软件架构
 软件架构说明
