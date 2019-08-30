@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="UTF-8">
+<title>心游超导航更新系统</title>
+<link rel="stylesheet" href="layer/skin/layui.css">
+
+<style>
+	.main{width:1200px;margin:0 auto;/*display:none;*/}
+	h1{text-align:center;}
+    .add_div {
+		
+        width: 800px;
+        height: 500px;
+        border: solid #ccc 1px;
+        margin: 40px auto;
+        text-align:center;
+    }
+	.layui-form-label{
+		width:120px;
+	}
+	.layui-input{
+		width:300px;
+	}
+	.layui-form-item{
+		margin:15px auto;
+		width:500px;
+	}
+    .file-list {
+        height: 180px;
+        display: none;
+        list-style-type: none;
+    }
+
+    .file-list img {
+        max-width: 350px;
+        vertical-align: middle;
+    }
+
+    .file-list .file-item {
+        margin-bottom: 10px;
+        float: left;
+        margin-left: 20px;
+    }
+
+
+    .file-list .file-item .file-del {
+        display: block;
+        margin-left: 20px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+
+</style>
+
+</head>
+<body>
+<div class="main">
+<h1>心游超导航更新</h1>
+
+<form class="add_div ">
+<div class="layui-form-item">
+    <label class="layui-form-label">超导航跳转地址：</label>
+    <div class="layui-input-block">
+      <input type="url" name="url"   placeholder="请输入网址" autocomplete="off" class="layui-input"  id="name">
+    </div>
+  </div>
+   <div class="layui-form-item">
+    <label class="layui-form-label">初始显示时间：</label>
+    <div class="layui-input-block">
+      <input type="text" name="date" id="time"  placeholder="yyyy-MM-dd" autocomplete="off"  class="layui-input">
+    </div>
+  </div>
+      <div style="margin-bottom:10px;height:220px;">
+        <span>图片(名字不能为中文,第一张为小图)：</span>
+        <input type="file" name="" id="choose-file"   multiple="multiple" accept="image/gif,image/jpeg,image/jpg,image/png" >
+
+
+    <ul class="file-list ">
+    </ul>
+    </div>
+   
+    
+
+</form>
+<button style="cursor: pointer;background-color:#a3a5a5; margin: -150px 573px;position:absolute;" class="layui-btn" href="javascript:;" id="upload">上传</button>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="layer/laydate/laydate.js"></script>
+
+<!--script src="http://pv.sohu.com/cityjson?ie=utf-8"></script-->
+<script>
+
+
+
+    $(function () {
+		/*var cip=returnCitySN["cip"];
+		var allowip=['210.73.216.83', '121.69.42.29']
+		if(allowip.includes(cip)){
+			$(".add_div").show();
+		}else{
+			alert("IP错误，拒绝访问！");
+			//window.opener=null;
+			window.open('http://game.ixinyou.com','_self');
+			//window.close();
+			
+		}*/
+		 
+		
+		
+        ////////////////////////////////////////////////图片上传//////////////////////////////////////////////
+        //声明变量
+        var $button = $('#upload'),
+            //选择文件按钮
+            $file = $("#choose-file"),
+            //回显的列表
+            $list = $('.file-list'),
+            //选择要上传的所有文件
+            fileList = [];
+        //当前选择上传的文件
+        var curFile;
+        // 选择按钮change事件，实例化fileReader,调它的readAsDataURL并把原生File对象传给它，
+        // 监听它的onload事件，load完读取的结果就在它的result属性里了。它是一个base64格式的，可直接赋值给一个img的src.
+        $file.on('change', function (e) {
+            //上传过图片后再次上传时限值数量
+            var numold = $('li').length;
+            if(numold >= 2){
+                layer.alert('最多上传2张图片');
+                return;
+            }
+            //限制单次批量上传的数量
+            var num = e.target.files.length;
+            var numall = numold + num;
+            if(num >2 ){
+               layer.alert('最多上传2张图片');
+               return;
+            }else if(numall > 2){
+                layer.alert('最多上传2张图片');
+                return;
+            }
+            //原生的文件对象，相当于$file.get(0).files;//files[0]为第一张图片的信息;
+            curFile = this.files;
+            //curFile = $file.get(0).files;
+            //console.log(curFile);
+            //将FileList对象变成数组
+            fileList = fileList.concat(Array.from(curFile));
+            //console.log(fileList);
+            for (var i = 0, len = curFile.length; i < len; i++) {
+                reviewFile(curFile[i])
+            }
+            $('.file-list').fadeIn(2500);
+			
+	
+        })
+
+
+        function reviewFile(file) {
+            //实例化fileReader,
+            var fd = new FileReader();
+            //获取当前选择文件的类型
+            var fileType = file.type;
+            //调它的readAsDataURL并把原生File对象传给它，
+            fd.readAsDataURL(file);//base64
+            //监听它的onload事件，load完读取的结果就在它的result属性里了
+            fd.onload = function () {
+                if (/^image\/[jpeg|png|jpg|gif]/.test(fileType)) {
+                    $list.append('<li style="border:solid red px; margin:5px 5px;" class="file-item"><img src="' + this.result + '" alt="" height="120"><span class="file-del ">删除</span></li>').children(':last').hide().fadeIn(2500);
+                } else {
+                    $list.append('<li class="file-item"><span class="file-name">' + file.name + '</span><span class="file-del">删除</span></li>')
+                }
+
+            }
+			
+        }
+
+        //点击删除按钮事件：
+        $(".file-list").on('click', '.file-del', function () {
+            let $parent = $(this).parent();
+            console.log($parent);
+            let index = $parent.index();
+			console.log(index);
+            fileList.splice(index, 1);
+            $parent.fadeOut(850, function () {
+                $parent.remove()
+            });
+			
+            //$parent.remove()
+        });
+        //点击上传按钮事件：
+        $button.on('click', function () {
+            var name = $('#name').val();
+			var date = $('#time').val();
+			var name_url= isURL(name);
+            if (name == '') {
+                layer.alert('跳转地址不能为空');
+                return;
+            }else if(!name_url){
+				layer.alert('请输入正确的域名');
+                return;
+			}
+           
+             if(fileList.length > 2){
+                    layer.alert('最多允许上传2张图片');
+                    return;
+            } else {
+                var formData = new FormData();
+                for (var i = 0, len = fileList.length; i < len; i++) {
+                    //console.log(fileList[i]);
+                    formData.append('upfile[]', fileList[i]);
+                }
+                formData.append('name', name);
+				formData.append('date', date);
+                // formData.append('catgory', catgory);
+                // formData.append('price', price);
+                // formData.append('desc', desc);
+                // formData.append('stock', stock);
+                // formData.append('status', status);
+                //console.log(formData.get("upfile"));
+                $.ajax({
+                    url: './uploads.php',
+                    type: 'post',
+                    data: formData,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.status == '1') {
+                            layer.alert(data.content, {icon: 6});
+							$('.file-list').fadeOut(2500);
+							$('.file-list').empty();
+							$('#name').val("");
+							$('#time').val("");
+							$('#choose-file').val("");
+                        } else if (data.status == '2') {
+                            layer.alert(data.content, {icon: 1});
+							$('.file-list').fadeOut(2500);
+							$('.file-list').empty();
+							$('#name').val("");
+							$('#time').val("");
+							$('#choose-file').val("");
+                        }
+                    }
+                })
+            }
+        })
+		
+		 laydate.render({
+				elem: '#time' //指定元素
+				,type: 'datetime'
+				,theme: '#393D49'
+				//,range: true
+				,trigger: 'click'
+				
+			});
+    })
+	
+	
+	function isURL(url) {
+    var re1 = /(\w+):\/\/([^\:|\/]+)(\:\d*)?(.*\/)([^#|\?|\n]+)?(#.*)?(\?.*)?/i;
+    //re.exec(url);
+    var arr = url.match(re1);
+    if (arr) {
+        var domain = arr[2];
+        var re2 = /^(.+\.)(com|edu|gov|int|mil|net|org|biz|info|name|museum|coop|aero|[a-z][a-z])$/;
+        if (!re2.test(domain)) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    } else {
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>
