@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://www.jq22.com/demo/vuebiaodan202005291734/ -->
+<html lang="en" style="font-size: 50px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>添加银行卡</title>
+
+<link rel="stylesheet" href="./添加银行卡_files/mint-ui.css">
+<link rel="stylesheet" href="./添加银行卡_files/common.css">
+<link rel="stylesheet" href="./添加银行卡_files/index.css">
+</head>
+<body style="background-color: #fff">
+<div class="vueBox"><div class="msg-box"><div class="msg-item"><span class="msg-item-tit">收款银行</span> <div class="input-right"><input type="text" readonly="readonly" placeholder="请选择收款银行"> <div class="down_arrow"></div></div></div></div> <div class="msg-box"><div class="msg-item"><span class="msg-item-tit">收款银行支行</span> <div class="input-right"><input type="text" placeholder="请输入收款银行支行"></div></div></div> <div class="msg-box"><div class="msg-item"><span class="msg-item-tit">银行卡</span> <div class="input-right"><input type="number" placeholder="请输入银行卡号"></div></div></div> <div class="msg-box"><div class="msg-item"><span class="msg-item-tit">收款户名</span> <div class="input-right"><input type="text" placeholder="请输入收款户名"></div></div></div> <div class="msg-box"><div class="msg-item"><span class="msg-item-tit">收款地区</span> <div class="input-right"><input type="text" readonly="readonly" placeholder="请选择收款地区"> <div class="down_arrow"></div></div></div></div> <div class="div-btn"><div class="btn-submit">提交</div></div> <div class="mint-popup mint-popup-bottom" style="z-index: 2001; display: none;"><ul class="mint-popup-head"><li>取消</li> <li>确认</li></ul> <div class="picker"><!----><div class="picker-items"><div class="picker-slot picker-slot-center" style="flex: 1 1 0%; -webkit-box-flex: 1;"><div class="picker-slot-wrapper" style="height: 180px; transform: translate(0px, 72px) translateZ(0px);"><div class="picker-item picker-selected" style="height: 36px; line-height: 36px;">
+      工商银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      农业银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      招商银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      建设银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      中国银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      平安银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      上海银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      光大银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      邮政储蓄银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      浦发银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      民生银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      广发银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      交通银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      兴业银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      北京农业商业银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      上海银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      渤海银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      中信银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      浙商银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      东亚银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      华夏银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      杭州银行
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      上海农业商业银行
+    </div></div><!----></div><div class="picker-center-highlight" style="height: 36px; margin-top: -18px;"></div></div></div></div> <div class="mint-popup mint-popup-bottom" style="display: none;"><ul class="mint-popup-head"><li>取消</li> <li>确认</li></ul> <div class="picker"><!----><div class="picker-items"><div class="picker-slot picker-slot-center city_provinces" style="flex: 1 1 0%; -webkit-box-flex: 1;"><div class="picker-slot-wrapper" style="height: 180px; transform: translate(0px, 72px) translateZ(0px);"><div class="picker-item picker-selected" style="height: 36px; line-height: 36px;">
+      北京
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      上海
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      天津
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      重庆
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      河北
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      山西
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      河南
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      辽宁
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      吉林
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      黑龙江
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      内蒙古
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      江苏
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      山东
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      安徽
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      浙江
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      福建
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      湖北
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      湖南
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      广东
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      广西
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      江西
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      四川
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      海南
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      贵州
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      云南
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      西藏
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      陕西
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      甘肃
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      青海
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      宁夏
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      新疆
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      台湾
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      香港
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      澳门
+    </div></div><!----></div><div class="picker-slot picker-slot-center picker-slot-divider city_divider"><!----><div>-</div></div><div class="picker-slot picker-slot-center city_cities" style="flex: 1 1 0%; -webkit-box-flex: 1;"><div class="picker-slot-wrapper" style="height: 180px; transform: translate(0px, 72px) translateZ(0px);"><div class="picker-item picker-selected" style="height: 36px; line-height: 36px;">
+      北京
+    </div></div><!----></div><div class="picker-slot picker-slot-center picker-slot-divider city_divider"><!----><div>-</div></div><div class="picker-slot picker-slot-center city_areas" style="flex: 1 1 0%; -webkit-box-flex: 1;"><div class="picker-slot-wrapper" style="height: 180px; transform: translate(0px, 72px) translateZ(0px);"><div class="picker-item picker-selected" style="height: 36px; line-height: 36px;">
+      东城区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      西城区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      朝阳区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      丰台区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      石景山区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      海淀区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      门头沟区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      房山区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      通州区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      顺义区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      昌平区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      大兴区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      怀柔区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      平谷区
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      密云县
+    </div><div class="picker-item" style="height: 36px; line-height: 36px;">
+      延庆县
+    </div></div><!----></div><div class="picker-center-highlight" style="height: 36px; margin-top: -18px;"></div></div></div></div></div>
+<script src="./添加银行卡_files/citys.js"></script>
+<script src="./添加银行卡_files/vue.min.2.5.13.js"></script>
+
+<script src="./添加银行卡_files/mint-ui.js"></script>
+<script src="./添加银行卡_files/vue.index.js"></script>
+<script src="./添加银行卡_files/resize.js"></script>
+
+
+</body></html>
