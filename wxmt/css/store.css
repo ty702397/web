@@ -1,0 +1,466 @@
+#app {
+    padding-bottom: 1rem;
+    background-color: #e6e6e6;
+}
+
+.go-top {
+    background: url(../img/game/top.png) no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 0.2rem;
+    bottom: 1.2rem;
+    z-index: 100;
+    color: #181818;
+    font-size: 0.2rem;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.is-bottom {
+    position: relative;
+    top: .5rem;
+    left: 50%;
+    margin-left: -1.5rem;
+    width: 3rem;
+    font-size: 0.26rem;
+    text-align: center;
+    color: #aaa;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 3.7rem;
+    overflow: hidden;
+    background: url(../img/store/home-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.header h2 {
+    position: relative;
+    padding: 2.2rem 0 0 0.25rem;
+    font-size: 0.35rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+
+/*.header h2 span{
+    position: absolute;
+    left: 3.35rem;
+    top: 0.8rem;
+    width: 0.7rem;
+    height: 0.28rem;
+    background: url(../img/store/title.png) no-repeat;
+	background-size:100% 100%;
+}*/
+
+.store-main {
+    position: relative;
+    background-color: #e6e6e6;
+    border-top: 0.5rem solid #e6e6e6;
+    border-radius: 0.2rem;
+    margin: -0.3rem 0 0 0;
+}
+
+.store-main>h3 {
+    position: relative;
+    padding-bottom: 0.2rem;
+    margin: 0 auto;
+    width: 2.4rem;
+    color: #181818;
+    font-size: 0.46rem;
+    text-align: center;
+}
+
+
+/*
+.store-main > h3::before,
+.store-main > h3::after{
+    position: absolute;
+    top: 0.12rem;
+    content: '';
+    width: 0.26rem;
+    height: 0.26rem;
+    transform: rotateZ(45deg);
+    background: linear-gradient(to bottom right,#3fe3bf,#49a9cd);
+}
+.store-main > h3::before{
+    left: 0;
+}
+.store-main > h3::after{
+    right: 0;
+}
+*/
+
+.store-list {
+    padding: 0.1rem 0;
+    background: url(../img/store/home-store-bg.png) no-repeat;
+    width: 100%;
+    height: 2.5rem;
+    background-size: 100%;
+}
+
+.store-list h4 {
+    position: relative;
+    margin: 0.3rem 0 0.2rem 0.8rem;
+    font-size: 0.32rem;
+    color: #181818;
+    width: 60%;
+}
+
+.store-list h4 span {
+    position: absolute;
+    top: 0.1rem;
+    left: -0.4rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    z-index: 2;
+    background: url(../img/store/home-icon-s.png) no-repeat;
+    background-size: 100%;
+}
+
+.store-list .city {
+    position: relative;
+    margin: 0 0 0.1rem 0.8rem;
+    font-size: 0.2rem;
+    color: #000;
+    font-weight: bold;
+    float: left;
+}
+
+.store-list .city span {
+    position: absolute;
+    top: 0rem;
+    left: -0.4rem;
+    width: 0.25rem;
+    height: 0.35rem;
+    z-index: 2;
+    background: url(../img/store/home-icon-l.png) no-repeat;
+    background-size: 100%;
+}
+
+.store-list .prize {
+    position: relative;
+    margin: 0.1rem 0 0.1rem 0.8rem;
+    font-size: 0.2rem;
+    color: #b6b6b6;
+    font-weight: bold;
+    float: left;
+}
+
+.store-list .prize span {
+    position: absolute;
+    top: 0rem;
+    left: -0.4rem;
+    width: 0.3rem;
+    height: 0.3rem;
+    z-index: 2;
+    background: url(../img/store/home-icon-p.png) no-repeat;
+    background-size: 100%;
+}
+
+.store-list .info {
+    font-size: 0.3rem;
+    width: 1.5rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    background-color: #ff0000;
+    color: #fff;
+    text-align: center;
+    display: block;
+    border-radius: 0.2rem;
+    margin: -0.2rem 0 0 5.7rem;
+}
+
+.store-list.coming {
+    height: 1.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.store-list.coming h4 {
+    position: relative;
+    margin: 0.7rem 0 0.2rem 0.8rem;
+    font-size: 0.32rem;
+    color: #b6b6b6;
+}
+
+.store-list.coming p {
+    position: relative;
+    margin: -0.58rem 0 0rem 4.8rem;
+    font-size: 0.25rem;
+    color: #b6b6b6;
+    font-weight: bold;
+}
+
+.dress {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.dress li {
+    width: 85%;
+    padding-left: 0.75rem;
+}
+
+.dress li img {
+    width: 100%;
+}
+
+.dress li span {
+    width: 0.4rem;
+    height: 0.25rem;
+    background: url(../img/store/s-title.png) no-repeat;
+    background-size: 100% 100%;
+    margin: 0.27rem 0.1rem 0 0;
+    display: block;
+    float: left;
+}
+
+.dress li p {
+    padding: 0.2rem 0;
+    font-size: 0.3rem;
+    color: #c31a18;
+    font-weight: bold;
+}
+
+
+/*city select*/
+
+.ui-form-item {
+    position: relative;
+    font-size: .35rem;
+    height: 44px;
+    line-height: 44px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 1.5rem;
+}
+
+.ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio):not(.ui-radio-s) {
+    width: 95px;
+    position: absolute;
+    padding-right: 10px;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #666
+}
+
+.ui-select {
+    position: relative;
+    margin-right: 6px
+}
+
+.ui-form-item input,
+.ui-form-item textarea {
+    text-align: left;
+    width: 100%;
+    min-height: 25px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    border: 0;
+    background: 0 0;
+    padding-left: 0
+}
+
+input,
+input:focus,
+input:active {
+    user-select: text
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0
+}
+
+.ui-select:after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -4px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #a6a6a6;
+    content: "";
+    pointer-events: none;
+    border: 0;
+    background: url(../img/store/icon-select.png) no-repeat;
+    height: 20px;
+    width: 20px;
+    background-size: 100%;
+    top: 35%;
+    right: -5px
+}
+
+::-webkit-input-placeholder {
+    color: #a6a6a6
+}
+
+.ui-form-item span {
+    display: block;
+    padding-left: 95px;
+    width: 100%;
+    text-align: right;
+    color: #000
+}
+
+.express-area {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff
+}
+
+.express-area a {
+    display: block
+}
+
+.express-area dl {
+    position: relative;
+    color: #4d525d
+}
+
+.express-area dl dt {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.express-area dl dd {
+    text-align: justify
+}
+
+@media(min-width:721px) and (max-width:1300px) {
+    .express-area a {}
+    .express-area dl dt {}
+    .express-area dl dd {}
+}
+
+.express-area-box {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    z-index: 15;
+    width: 320px;
+    margin-left: -160px;
+    background-color: #fff;
+    border-radius: 6px 6px 0;
+    color: #4d525d;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    margin-left: 0
+}
+
+.express-area-box header {
+    position: relative;
+    border-radius: 6px 6px 0;
+}
+
+.express-area-box header h3 {
+    text-align: center
+}
+
+.express-area-box header .back,
+.express-area-box header .close {
+    position: absolute;
+    top: 0
+}
+
+.express-area-box header .back {
+    display: none;
+    left: 0
+}
+
+.express-area-box header .close {
+    right: 0
+}
+
+.express-area-box article {
+    height: 5.5rem;
+    overflow-y: scroll
+}
+
+.area-list li {
+    padding: 0 15px;
+    width: 30%;
+    float: left;
+    border: 1px solid;
+    border-radius: 0.4rem;
+    text-align: center;
+    margin-left: 0.5rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    margin-top: 0.3rem;
+}
+
+.area-list li:hover {
+    background-color: #c31a18;
+    color: #fff;
+}
+
+.area-list li.current {
+    background-color: #c31a18;
+    color: #fff;
+}
+
+@media(min-width:721px) and (max-width:1300px) {
+    .express-area-box {}
+    .express-area-box header h3 {}
+    .express-area-box header .back,
+    .express-area-box header .close {}
+    .express-area-box article {
+        height: 120px
+    }
+    .area-list li {}
+}
+
+@media(max-width:720px) {
+    .express-area-box {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        margin-left: 0
+    }
+}
+
+.mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+@media(max-width:720px) {
+    .mask {}
+}
+
+.selet-area-wrap {
+    display: -webkit-box;
+    width: 90%;
+    height: 1px;
+    padding: 0 15px;
+    background: #e6e6e6;
+    margin: 0 auto;
+}

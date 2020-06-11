@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewprot-fit=contain">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>布鲁克海文实验-恐怖游戏-UCVR</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="../../css/swiper-4.2.0.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/games-detail.css">
+</head>
+
+<body>
+    <div id="app" class="app">
+        <div id="loading" class="loading">
+            <img src="data:image/gif;base64,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"
+                alt="">
+        </div>
+        <!-- bottom nav-->
+        <div id="bottom-nav" class="bottom-nav">
+        </div>
+        <!-- games -->
+        <div id="game-detail-name" class="game-detail">
+            <header>
+                <div class="game-title">
+                    <div class="game-icon">
+                        <img src="/uploads/uploads/200224/blksys.png" alt="布鲁克海文实验">
+                    </div>
+                    <div class="game-title-text">
+                        <a href="#">布鲁克海文实验</a>
+                        <p>丧心病狂前所未有的生存挑战！</p>
+                    </div>
+                </div>
+                <div class="game-tags">
+                    
+                    <span>惊险</span>
+                    
+                    <span>射击</span>
+                    
+                </div>
+            </header>
+            <div class="game-media">
+                <!--h2 class="game-media-title">
+                    <span></span>
+                    游戏画面
+                </h2-->
+                <div class="swiper-wrap">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="game-video-main pic-video-main">
+                                <img src="/uploads/uploads/190305/190306/2-1Z306134S12W.jpg" alt="游戏画面1">
+                                <span></span>
+                                <video id="video" class="video" src="http://mserve.mitianvr.com/video/arizonasunshine/video.mp4" controls="true" preload="auto" webkit-playsinline="true" playsinline="true"
+                                    x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint"
+                                    style="object-fit:fill">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面5">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面6">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面7">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面8">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面9">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="" alt="游戏画面10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="game-info">
+                <h2 class="game-info-title">
+                    <span></span>
+                    游戏介绍
+                </h2>
+                <div class="game-info-main">
+					<p></p>
+                </div>
+			</div>
+            <div data-type="敬请期待" class="game-help">
+                <h2 class="game-media-title">
+                    <span></span>
+                    游戏玩法
+                </h2>
+                <!-- 敬请期待 -->
+                <div id="wait" class="game-video-main help-video-main">
+                    <img src="../../img/game/help.jpg" alt="游戏教程">
+                </div>
+                <!-- 视频教程 -->
+                <div id="help-video" class="game-video-main help-video-main">
+                    <img src="" alt="游戏教程">
+                    <span></span>
+                    <video id="video2" class="video" src="" controls="true" preload="auto" webkit-playsinline="true" playsinline="true"
+                        x-webkit-airplay="allow" x5-video-player-type="h5" x5-video-player-fullscreen="true" x5-video-orientation="portraint"
+                        style="object-fit:fill">
+                    </video>
+                </div>
+                <!-- 图文教程 -->
+                <div id="help-img" class="game-img-help">
+                    <h3>1.手柄使用</h3>
+                    <div class="game-help-control">
+                        <img src="" alt="手柄使用教程">
+                    </div>
+                    <h3>2.</h3>
+                    <ul class="game-help-pic">
+                        <li>
+                            <img src="" alt="如何联机体验1">
+                        </li>
+                        <li>
+                            <img src="" alt="如何联机体验2">
+                        </li>
+                        <li>
+                            <img src="" alt="如何联机体验3">
+                        </li>
+                        <li>
+                            <img src="" alt="如何联机体验4">
+                        </li>
+                        <li>
+                            <img src="" alt="如何联机体验5">
+                        </li>
+                    </ul>
+                    <h3>3.</h3>
+                    <ul class="game-help-pic">
+                        <li>
+                            <img src="" alt="游戏技巧1">
+                        </li>
+                        <li>
+                            <img src="" alt="游戏技巧2">
+                        </li>
+                        <li>
+                            <img src="" alt="游戏技巧3">
+                        </li>
+                        <li>
+                            <img src="" alt="游戏技巧4">
+                        </li>
+                        <li>
+                            <img src="" alt="游戏技巧5">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="is-bottom" class="is-bottom">已经到底了</div>
+        </div>
+
+    </div>
+    <!-- js -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/swiper-4.2.0.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#loading').fadeOut();
+
+        });
+    </script>
+    <script>
+        // game swiper
+
+        var mySwiper = new Swiper('.swiper-wrap', {
+            direction: "horizontal",
+            autoplay: 1000,
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: 10,
+        })
+    </script>
+</body>
+
+</html>

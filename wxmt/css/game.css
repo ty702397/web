@@ -1,0 +1,91 @@
+#app {
+
+    background-color: #F7F7F7;
+}
+/* game */
+.game{
+    color: #F7F7F7;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-top: 0.3rem;
+}
+.game-item{
+    position: relative;
+    display: block;
+    margin: 0.2rem auto;
+    padding-left: 2.2rem;
+    width: 90%;
+    height: 2rem;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.game-yellow{
+    background: url('../img/game/relaxation-bg.png') no-repeat top right;
+    background-size: auto 100%;
+}
+.game-green{
+    background: url('../img/game/action-bg.png') no-repeat top right;
+    background-size: auto 100%;
+}
+.game-red{
+    background: url('../img/game/panic-bg.png') no-repeat top right;
+    background-size: auto 100%;
+}
+.game-blue{
+    background: url('../img/game/online-bg.png') no-repeat top right;
+    background-size: auto 100%;
+}
+.game-item h2{
+    padding-top: 0.6rem;
+    color: #fff;
+    font-size: 0.25rem;
+}
+.game-item p{
+    color: #fff;
+    padding-top: 0.1rem;
+    font-size: 0.2rem;
+}
+.game-item span{
+    color: #fff;
+    font-size: 0.2rem;
+}
+.game-item span{
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.1rem;
+}
+.game-icon{
+    position: absolute;
+    left: 0;
+    top: 0.11rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    background-size: 100% auto;
+}
+.game-yellow-icon{
+    background-image: url('../img/game/relaxation-icon.png');
+}
+.game-green-icon{
+    background-image: url('../img/game/action-icon.png');
+}
+.game-red-icon{
+    background-image: url('../img/game/panic-icon.png');
+}
+.game-blue-icon{
+    background-image: url('../img/game/online-icon.png');
+}
+.game-all{
+    display: block;
+    margin: 0.4rem auto 0;
+    width: 4.5rem;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
+    border: 1px solid #6c6c6c;
+    border-radius: 0.4rem;
+    font-size: 0.28rem;
+    font-weight: 700;
+    color: #000;
+}

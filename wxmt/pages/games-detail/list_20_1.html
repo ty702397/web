@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewprot-fit=contain">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>休闲游戏-弥天VR游戏库</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/game-item.css">
+</head>
+
+<body>
+    <div id="app" class="app">
+        <div id="loading" class="loading">
+            <img src="data:image/gif;base64,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"
+                alt="">
+        </div>
+        <!-- bottom nav-->
+        <div id="bottom-nav" class="bottom-nav"></div>
+				<!-- go top !-->
+		<div id="go-top" class="go-top">顶部</div>
+        <!-- games -->
+        <div id="game-wrap" class="game-wrap">
+            <div class="header">
+                <h2>
+                    <span></span>
+                    选择游戏
+                </h2>
+                <div class="nav">
+                    <ul>
+                        <li class="nav-item nav-item1">
+                            <a href="../games-item/game-all.html">
+                                全部
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item2 active">
+                            <a href="../games-detail/yellow.html">
+                                轻松休闲
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item3">
+                            <a href="../games-detail/game-green.html">
+                                动作挑战
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item4">
+                            <a href="../games-detail/game-red.html">
+                                惊险刺激
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item5">
+                            <a href="../games-detail/game-blue.html">
+                                欢乐联机
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="game-list">
+                    <div class="game-item">
+                        <a href="http://mserve.mitianvr.com/pages/games-detail/107.html" title="水果忍者VR">
+                            <img src="/uploads/uploads/200224/sgrzvr.png" alt="水果忍者VR">
+                        </a>
+                        <div class="game-item-text">
+                            <a href="http://mserve.mitianvr.com/pages/games-detail/107.html">水果忍者VR</a>
+                            <p>延续切西瓜的疯狂玩法，让你享受水果爆炸带来的发泄快感。</p>
+                           <span id="107" class="wish-item-btn"><a href="http://mserve.mitianvr.com/pages/games-detail/107.html" >查看</a></span>
+                        </div>
+                    </div>
+<div class="game-item">
+                        <a href="http://mserve.mitianvr.com/pages/games-detail/101.html" title="节奏光剑">
+                            <img src="/uploads/uploads/200224/jzgj1.png" alt="节奏光剑">
+                        </a>
+                        <div class="game-item-text">
+                            <a href="http://mserve.mitianvr.com/pages/games-detail/101.html">节奏光剑</a>
+                            <p>音乐不止，光剑不停，让力量跟着节奏燃起来！</p>
+                           <span id="101" class="wish-item-btn"><a href="http://mserve.mitianvr.com/pages/games-detail/101.html" >查看</a></span>
+                        </div>
+                    </div>
+
+            </div>
+            <div id="is-bottom" class="is-bottom">已经到底了</div>
+        </div>
+
+    </div>
+    <!-- js -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/game-type.js"></script>
+</body>
+
+</html>

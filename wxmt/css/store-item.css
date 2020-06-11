@@ -1,0 +1,301 @@
+#app {
+    /*padding-bottom: 1rem;*/
+    background-color: #fff;
+}
+
+.go-top {
+    background: url(../img/game/top.png) no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 0.2rem;
+    bottom: 1.2rem;
+    z-index: 100;
+    color: #181818;
+    font-size: 0.2rem;
+    text-align: center;
+    line-height: 2rem;
+    display: none;
+}
+
+.is-bottom {
+    display: none;
+    position: relative;
+    top: .5rem;
+    left: 50%;
+    margin-left: -1.5rem;
+    width: 3rem;
+    font-size: 0.26rem;
+    text-align: center;
+    color: #aaa;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 4.3rem;
+    overflow: hidden;
+    background: url(../img/store/store-bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.header h2 {
+    position: relative;
+    padding: 0.5rem 0 0 0.25rem;
+    font-size: 0.45rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 0.2rem;
+    color: #fff;
+    float: left;
+}
+
+.header .time {
+    padding: 0.1rem 0 0 0.3rem;
+}
+
+.header .safe {
+    width: 25%;
+    position: absolute;
+    top: .2rem;
+    right: .4rem;
+}
+
+.header .city {
+    position: relative;
+    margin: 1.2rem 0 0 0.7rem;
+}
+
+.header .city p {
+    width: 95%;
+    overflow: hidden;
+}
+
+.header .city span {
+    position: absolute;
+    top: 0rem;
+    left: -0.4rem;
+    width: 0.25rem;
+    height: 0.35rem;
+    z-index: 2;
+    background: url(../img/store/store-icon-l.png) no-repeat;
+    background-size: 100%;
+}
+
+.header .prize {
+    position: relative;
+    margin: 2rem 0 0rem 0.3rem;
+    width: 5rem;
+    height: .45rem;
+    z-index: 2;
+    line-height: .45rem;
+    background: url(../img/store/store-icon-p.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.header .prize p {
+    padding-left: 1.3rem;
+    font-size: 0.25rem;
+    font-weight: bold;
+    color: #f2c6a5;
+}
+
+.store-main {
+    position: relative;
+    background-color: #fff;
+    border-top: 0.5rem solid #fff;
+    border-radius: 0.2rem;
+    margin: -0.3rem 0 0 0;
+    width: 100%;
+}
+
+.store-main>h3 {
+    position: relative;
+    padding-bottom: 0.2rem;
+    margin: 0 auto;
+    width: 2.4rem;
+    color: #181818;
+    font-size: 0.46rem;
+    text-align: center;
+}
+
+.store-main .store-swiper-container {
+    width: 95%;
+    height: 4.6rem;
+    margin: -0.3rem auto 0.2rem;
+    border-bottom: 1px solid #d4d4d4;
+    overflow: hidden;
+}
+
+.store-main .store-swiper-container h3 {
+    position: relative;
+    width: 2.4rem;
+    color: #181818;
+    font-size: 0.35rem;
+    padding-left: 0.2rem;
+}
+
+.store-main .store-swiper-container .store-swiper-text {
+    font-size: 0.3rem;
+    text-align: center;
+    font-weight: 100;
+    overflow: hidden;
+    width: 100%;
+    margin: -0.75rem auto;
+}
+
+.store-main .swiper-slide {
+    width: 84%;
+    height: 4.3rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    transition: height 200ms ease-out, margin-top 200ms linear;
+}
+
+
+/* 
+.store-main .swiper-slide-active {
+    height: 4.2rem;
+}
+   
+.store-main .swiper-slide-prev,
+.store-main .swiper-slide-next {
+	margin-top: 0.2rem;
+    height: 3.8rem;
+}
+*/
+
+.store-main .swiper-slide img {
+    width: 100%;
+    -webkit-transition: height 200ms linear;
+    -o-transition: height 200ms linear;
+    transition: height 200ms linear;
+}
+
+.game-list {
+    width: 95%;
+    height: 10.5rem;
+    margin: 0 auto 0.2rem;
+    border-bottom: 1px solid #d4d4d4;
+    overflow: hidden;
+}
+
+.game-list h3 {
+    position: relative;
+    width: 2.4rem;
+    color: #181818;
+    font-size: 0.35rem;
+    padding-left: 0.2rem;
+}
+
+.game-item {
+    position: relative;
+    width: 100%;
+    height: 1.8rem;
+}
+
+.game-item>a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.game-item-img {
+    float: left;
+    margin: 0.24rem 0.3rem 0 0.3rem;
+    width: 1.43rem;
+    height: 1.43rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+.game-item-img img {
+    width: 100%;
+}
+
+.game-info {
+    width: 70%;
+    float: left;
+    border-bottom: 1px solid #d4d4d4;
+    height: 1.7rem;
+}
+
+.game-text {
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0.35rem 0 0 0;
+}
+
+.game-text h4 {
+    font-size: 0.24rem;
+    color: #181818;
+    line-height: 0.5rem;
+}
+
+.game-text p {
+    width: 3rem;
+    max-height: 0.6rem;
+    overflow: hidden;
+    font-size: 0.18rem;
+    color: #6a6b6b;
+}
+
+.wish-item-btn {
+    top: 0.6rem;
+    height: 0.54rem;
+    font-size: 0.23rem;
+    width: 1.5rem;
+    line-height: 0.55rem;
+    color: #c31a18;
+    background-color: #f0f2f6;
+    border-radius: 0.3rem 0.3rem;
+    text-align: center;
+}
+
+.game-list .swiper-slide {
+    width: 100%;
+    height: 9rem;
+    overflow: hidden;
+    transition: height 200ms ease-out, margin-top 200ms linear;
+}
+
+.game-list .game-list-pagination {
+    bottom: 9.5rem;
+}
+
+.store-history {
+    width: 95%;
+    height: 6rem;
+    overflow: visible;
+    margin: 0 auto 0.2rem;
+}
+
+.store-history p {
+    font-size: 0.25rem;
+    font-weight: 100;
+    padding-top: .2rem;
+}
+
+.store-ad {
+    width: 100%;
+    height: 3rem;
+    overflow: visible;
+    margin: 0 auto 0.2rem;
+}
+
+.store-history img,
+.store-ad img {
+    width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+    background: #000;
+}

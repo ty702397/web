@@ -1,0 +1,202 @@
+#app{
+    background-color: #fff;
+}
+.go-top{
+	background: url(../img/game/top.png) no-repeat;
+    background-size: 100% 100%;
+	position:fixed;
+	width: 1.5rem;
+    height: 1.5rem;
+    right: 0.2rem;
+    bottom: 1.2rem;
+    z-index: 100;
+    color: #181818;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 2rem;
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 1.9rem;
+    overflow: hidden;
+    /*background: -webkit-linear-gradient(bottom, #6ceaec, #1EB7BC);
+    background: -o-linear-gradient(bottom, #6ceaec, #1EB7BC);
+    background: -webkit-gradient(linear, left top, left bottom, from(#6ceaec), to(#1EB7BC));
+    background: -webkit-linear-gradient(top, #6ceaec, #1EB7BC);
+    background: -o-linear-gradient(top, #6ceaec, #1EB7BC);
+    background: linear-gradient(to bottom, #6ceaec, #1EB7BC);
+	*/
+}
+.header h2{
+    position: relative;
+    padding:0.2rem  0 0 0.7rem;
+    font-size: 0.36rem;
+    color: #181818;
+    font-weight: 800;
+}
+.header h2 span{
+    position: absolute;
+    left: 0.3rem;
+    top: 0.28rem;
+    width: 0.2rem;
+    height: 0.35rem;
+    background-color: #fff;
+	background: url(../img/home/title.png) no-repeat;
+    background-size: 100% 100%;
+}
+.nav{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.nav ul{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0.1rem auto 0;
+    width: 96%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+
+}
+.nav-item{
+    width: 1.29rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-align: center;
+    /*background-image: url('../img/game/game-nav.png');*/
+    background-repeat: no-repeat;
+	background-size:100% 100%;
+	margin-top:0.05rem
+
+}
+.nav-item.active{
+	width: 1.5rem;
+    height: 0.8rem;
+    margin-top: 0;
+}
+.nav-item1{
+    background-image: url('../img/game/game-nav1.png');
+}
+.nav-item2{
+    background-image: url('../img/game/game-nav2.png');
+}
+.nav-item3{
+    background-image: url('../img/game/game-nav3.png');
+}
+.nav-item4{
+    background-image: url('../img/game/game-nav4.png');
+}
+.nav-item5{
+    background-image: url('../img/game/game-nav5.png');
+}
+.nav-item1.active{
+    background-image: url('../img/game/game-nav1-a.png');
+}
+.nav-item2.active{
+    background-image: url('../img/game/game-nav2-a.png');
+}
+.nav-item3.active{
+    background-image: url('../img/game/game-nav3-a.png');
+}
+.nav-item4.active{
+    background-image: url('../img/game/game-nav4-a.png');
+}
+.nav-item5.active{
+    background-image: url('../img/game/game-nav5-a.png');
+}
+.nav-item a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0.25rem;
+    color: #fff;
+}
+.nav-item.active a{
+	font-size:0.28rem;
+	font-weight:bold;
+}
+.game-list{
+    position: relative;
+    padding:0.4rem 0.2rem 1.6rem;
+    /*background-color: #E5E5E5;
+    -webkit-box-shadow: 0 -2px 12px #515151;
+            box-shadow: 0 -2px 12px #515151;*/
+}
+.game-item{
+    position: relative;
+    margin-bottom: 0.2rem;
+    width: 100%;
+    height: 3.85rem;
+    border-radius: 0.1rem;
+    overflow: hidden;
+   /* -webkit-box-shadow: 0 0 5px #888;
+            box-shadow: 0 0 5px #888;*/
+}
+.game-item > a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.game-item > a > img{
+    position: absolute;
+    width: 100%;
+}
+.game-item-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding:0.38rem 0 0 0.2rem;
+    width: 100%;
+    height: 1.35rem;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    background-size: 100% auto;
+}
+.game-item-text a{
+    display: block;
+    width: 5rem;
+    padding-bottom: 0.02rem;
+    font-size: 0.32rem;
+    font-weight: 500;
+    color: #fff;
+}
+.game-item-text p{
+	   width: 5rem;
+    height: 0.3rem;
+    overflow: hidden;
+    font-size: 0.2rem;
+    color: #aaa9a9;
+}
+.wish-item-btn{
+	width: 1.3rem;
+	height: 0.54rem;
+    border: 0.02rem solid #dddedf;
+    border-radius: 0.3rem 0.3rem;
+    text-align: center;
+	top: 0.5rem;
+    right: 0.27rem;
+}
+.wish-item-btn a{
+	display:block;
+		width: 1.3rem;
+	 font-size: 0.3rem;
+    line-height: 0.54rem;
+    color: #dddedf;
+
+}
+.wish-item-btn.like{
+        background-position: 0 -0.01rem;  
+}
+.game-wrap{
+    position: relative;
+    height: 100%;
+}

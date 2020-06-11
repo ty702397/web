@@ -1,0 +1,312 @@
+#app {
+    background-color: #fff;
+}
+
+.game-title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.game-icon {
+    padding: 0.28rem 0 0 0.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.game-icon img {
+    border-radius: 0.2rem;
+    width: 100%;
+}
+
+.game-title-text {
+    position: relative;
+    padding: 0.25rem 0 0 0.2rem;
+    width: 4.8rem;
+    height: 1.7rem;
+}
+
+.game-title-text a {
+    display: block;
+    color: #181818;
+    font-size: 0.4rem;
+    font-weight: 700;
+}
+
+.game-title-text > p {
+    padding-top: 0.04rem;
+    width: 100%;
+    height: 0.7rem;
+    overflow: hidden;
+    color: #8c8c8c;
+    font-size: 0.26rem;
+}
+
+.game-wish-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0.06rem 0.1rem;
+    text-align: right;
+    width: 1.6rem;
+    height: 0.51rem;
+    line-height: 0.5rem;
+    font-size: 0.28rem;
+    color: #46cbcf;
+    border-radius: 0.15rem;
+    box-sizing: border-box;
+    border: 1px solid #46cbcf; 
+}
+
+.game-wish-btn i {
+    position: absolute;
+    top: 0.08rem;
+    left: 0.1rem;
+    width: 0.38rem;
+    height: 0.38rem;
+    background: url('../img/game/wish.png') no-repeat;
+    background-size: auto 0.35rem;
+    background-position: -0.36rem 0;
+}
+.game-wish-btn.like{
+    border: 1px solid #46cbcf;
+    color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#49a9cd), to(#3fe3bf));
+    background: -webkit-linear-gradient(top, #49a9cd, #3fe3bf);
+    background: -o-linear-gradient(top, #49a9cd, #3fe3bf);
+    background: linear-gradient(to bottom, #49a9cd, #3fe3bf);
+}
+.game-wish-btn.like i {
+    background-position: 0 0;
+}
+.game-wish-btn p{
+    position: absolute;
+    top: 0;
+    right: 0.1rem;
+    width: 0.9rem;
+    text-align: center;
+}
+.game-tags {
+    margin: -0.4rem 2.4rem;
+    width: 60%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.game-tags span {
+    display: block;
+    margin-right: 0.2rem;
+    padding: 0 0.16rem;
+    font-size: 0.23rem;
+    color: #181818;
+    border-radius: 0.15rem;
+    border: 1px solid #181818;
+}
+
+.game-media{
+	position:relative;
+    height: 3.5rem;
+    border-bottom: 0.01rem solid #c9c9c9;
+    width: 7.2rem;
+    margin: 1rem auto 0;
+}
+.game-media-title {
+    position: relative;
+    padding: 0.2rem 0.4rem 0.3rem;
+    font-size: 0.27rem;
+}
+
+.game-media-title span {
+    position: absolute;
+    top: 0.24rem;
+    left: 0.26rem;
+    width: 3px;
+    height: 0.28rem;
+    background-color: #46cbcf;
+}
+.swiper-wrap{
+    overflow: hidden;
+}
+.swiper-slide {
+    width: 90%;
+    height:3.3rem;
+    overflow: hidden;
+    border-radius: 0.18rem;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height:100%;
+}
+
+.game-info{
+		position:relative;
+    min-height: 1rem;
+    border-bottom: 0.01rem solid #c9c9c9;
+    width: 7.2rem;
+	margin:0 auto;
+}
+
+.game-info h2 {
+    margin: 0.5rem 0 0.3rem;
+    position: relative;
+    font-size: 0.35rem;
+    width: 100%;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    padding-left: 0.5rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #181818;
+    font-weight: 500;
+}
+
+.game-info h2 span {
+    position: absolute;
+    top: 0;
+    left: 0.25rem;
+    width: 0.2rem;
+    height: 0.35rem;
+    background:url("../img/home/title.png") no-repeat;
+	background-size:100% 100%;
+}
+
+.game-info h2 a {
+    position: absolute;
+    top: 0.025rem;
+    right: 0;
+    font-size: 0.3rem;
+    color: #181818;
+}
+.game-info-main{
+	width: 6.2rem;
+    padding-left: 0.5rem;
+}
+.game-info-main p{
+       font-size: 0.29rem;
+    color: #181818;
+	padding-bottom: 0.5rem;
+}
+
+.game-video-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.pic-video-bg {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    background-color: #000;
+    overflow: hidden;
+}
+.pic-video-bg img{
+    width: 100%;
+    opacity: 0.7;
+}
+.game-video-main span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1rem;
+    height: 1rem;
+    z-index: 2;
+    background: url('../img/common/video-btn.png');
+    background-size: 99% auto;
+}
+
+.game-video-main video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height:100%;
+    opacity: 0;
+    -webkit-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.game-help{
+	width: 7.2rem;
+	margin:0 auto;
+}
+
+.game-help h2 {
+    margin: 0.5rem 0 0.3rem;
+    position: relative;
+    font-size: 0.35rem;
+    width: 100%;
+    height: 0.35rem;
+    line-height: 0.35rem;
+    padding:0 0 0 0.5rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #181818;
+    font-weight: 500;
+}
+
+.game-help h2 span {
+    position: absolute;
+    top: 0;
+    left: 0.25rem;
+    width: 0.2rem;
+    height: 0.35rem;
+    background:url("../img/home/title.png") no-repeat;
+	background-size:100% 100%;
+}
+
+.game-help h3 {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.4rem;
+    color: #46cbcf;
+}
+
+.game-help-pic,
+.game-help-control{
+    margin: 0 auto;
+    width: 92%;
+}
+.game-help-control{
+    padding-bottom: 0.3rem;
+}
+.game-help-pic img,
+.game-help-control img{
+	width:95%;
+        border-radius: 0.1rem;
+    margin: 0 auto;
+}
+.game-help-pic li{
+    padding-bottom:0.3rem; 
+}
+.help-video-main{
+    margin: 0 auto 0.5rem;
+    width: 90%;
+    height: 3.3rem;
+    border-radius: 0.18rem;
+    overflow: hidden;
+}
+.help-video-main img{
+    width: 100%;
+}
+.game-detail{
+    position: relative;
+    padding-bottom: 2rem;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewprot-fit=contain">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10秒上手-弥天VR游戏库</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/help.css">
+</head>
+
+<body>
+    <div id="app" class="app">
+        <div id="loading" class="loading">
+            <img src="data:image/gif;base64,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"
+                alt="">
+        </div>
+        <div id="help" class="help">
+            <div class="header">
+                <h2>
+                    <span></span>
+                    玩法教程
+                </h2>
+            </div>
+            <div class="help-main">
+                <h3>10秒上手</h3>
+                <section>
+                    <h4>
+                        <span>1<i></i></span>
+                        进入箱体
+                    </h4>
+                    <p>温馨提醒：如有其他玩家正在游戏，请您在箱体外耐心等待</p>
+                </section>
+                <section>
+                    <h4>
+                        <span>2<i style="height:4.5rem"></i></span>
+                        在触屏上选择想要体验的游戏
+                    </h4>
+                    <p>为了节省您宝贵的时间，你可在本页面中提前了解游戏介绍及玩法教程</p>
+                    <img src="img/help/screen1.png" alt="套餐">
+                </section>
+                <section>
+                    <h4>
+                        <span>3
+                            <i></i>
+                        </span>
+                        选择完毕，扫码支付
+                    </h4>
+                    <p></p>
+                </section>
+                <section>
+                    <h4>
+                        <span>4<i style="height: 14.2rem;"></i></span>
+                        佩戴头显
+                    </h4>
+                    <ul class="dress">
+                        <li>
+                            <img src="img/help/01.png" alt="1">
+                            <span></span><p> 1. 检查并确定头显绑带松弛</p>
+                        </li>
+                        <li>
+                            <img src="img/help/02.png" alt="2">
+                            <span></span><p> 2. 带上头显</p>
+                        </li>
+                        <li>
+                            <img src="img/help/03.png" alt="3">
+                            <span></span><p> 3. 调节前镜头至面部合适位置</p>
+                        </li>
+                        <li>
+                            <img src="img/help/04.png" alt="4">
+                            <span></span><p> 4. 收紧头显两侧绑带</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>
+                        <span>5
+                            <i></i>
+                        </span>
+                        抓起手柄
+                    </h4>
+                    <p>戴上头显后，看到并拿起手柄</p>
+                </section>
+                <section>
+                    <h4>
+                        <span>6
+                            <i></i>
+                        </span>
+                        开始游戏
+                    </h4>
+                    <p>转身向中间站立等待游戏开始</p>
+                </section>
+                <section>
+                    <h4>
+                        <span>7</span>
+                        游戏结束
+                    </h4>
+                    <p>摘下头显后，将头显和手柄放回原处</p>
+                </section>
+            </div>
+        </div>
+        <!-- bottom nav-->
+        <div id="bottom-nav" class="bottom-nav">
+            <ul>
+                <li>
+                    <a href="index.html" class="bottom-nav-item bottom-0">
+                        <i></i>
+                        <span>主页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/games-item/game-all.html" class="bottom-nav-item bottom-2">
+                        <i></i>
+                        <span>游戏</span>
+                    </a>
+                </li>
+                <!--<li>
+                    <a href="combo.html" class="bottom-nav-item bottom-1">
+                        <i></i>
+                        <span>套餐</span>
+                    </a>
+                </li>-->
+                <li>
+                    <a href="help.html" class="bottom-nav-item bottom-3 bottom-active">
+                        <i></i>
+                        <span>玩法</span>
+                    </a>
+                </li>
+                <!--li>
+                    <a href="user.html" class="bottom-nav-item bottom-4">
+                        <i></i>
+                        <span>我的</span>
+                    </a>
+                </li-->
+            </ul>
+        </div>
+    </div>
+    <!-- js -->
+    <!--script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script-->
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // 加载完毕去掉loading
+            // 如果数据不存在，则自动返回首页
+            // function isWeixin() {
+            //     var ua = navigator.userAgent.toLowerCase();
+            //     if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            //         return true;
+            //     } else {
+            //         window.location.href =
+            //             'http://api.uc-vr.com/api/v1/member/wechat/wx_auth?next=http%3a%2f%2fres.ixinyou.com%2fucvr%2f';
+            //         return false;
+            //     }
+            // }
+            // isWeixin();
+            // if (!localStorage.ucvrUser) {
+            //     window.location.href =
+            //         'http://api.uc-vr.com/api/v1/member/wechat/wx_auth?next=http%3a%2f%2fres.ixinyou.com%2fucvr%2f';
+            // }
+            if (!localStorage.ucvrData) {
+                window.location.href = "./";
+            }
+            
+            $('#loading').fadeOut();
+        });
+    </script>
+</body>
+
+</html>
