@@ -60,7 +60,7 @@
 .store-main {
     position: relative;
     background-color: #e6e6e6;
-    border-top: 0.5rem solid #e6e6e6;
+    border-top: 0.2rem solid #e6e6e6;
     border-radius: 0.2rem;
     margin: -0.3rem 0 0 0;
 }
@@ -167,7 +167,7 @@
     width: 1.5rem;
     height: 0.6rem;
     line-height: 0.6rem;
-    background-color: #ff0000;
+    background-color: #ca3634;
     color: #fff;
     text-align: center;
     display: block;
@@ -176,23 +176,24 @@
 }
 
 .store-list.coming {
-    height: 1.5rem;
-    margin-bottom: 0.2rem;
+    /* height: 1.5rem;
+    margin-bottom: 0.2rem;*/
 }
 
 .store-list.coming h4 {
     position: relative;
-    margin: 0.7rem 0 0.2rem 0.8rem;
+    margin: 1rem 0 0.2rem 0.8rem;
     font-size: 0.32rem;
     color: #b6b6b6;
 }
 
-.store-list.coming p {
+.store-list.coming .wait {
     position: relative;
     margin: -0.58rem 0 0rem 4.8rem;
     font-size: 0.25rem;
     color: #b6b6b6;
     font-weight: bold;
+    float: left;
 }
 
 .dress {

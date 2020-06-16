@@ -39,8 +39,13 @@ $(document).ready(function() {
         }, 500);
     });
     $('.store-list').each(function(i, n) {
+        //console.log($(n));
         if ($(n).attr('data-type') == "敬请期待") {
             $(n).addClass("coming");
+            $('.coming p').remove();
+            $('.coming a').remove();
+            $(n).append('<span class="wait">即将开业，敬请期待</span>');
+
         }
     });
     game_list();
