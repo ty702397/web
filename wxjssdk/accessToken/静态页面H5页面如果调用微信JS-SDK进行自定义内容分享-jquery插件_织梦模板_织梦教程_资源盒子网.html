@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" />
+<title>静态页面H5页面如果调用微信JS-SDK进行自定义内容分享-jquery插件_织梦模板_织梦教程_资源盒子网</title>
+<meta name="keywords" content="微信JS-SDK,微信自定义内容分享,微信静态页面调用">
+<meta name="description" content="最近在给朋友手机站做一个手机静态页面，朋友要求能在微信中自定义分享的内容，百度有各种相关文章，翻了很多页也没找到一个能详细阐述的文章，站长爬了微信官方技术文档，同时也爬了">
+<link href="https://img.zybox.cc/zybox/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="https://img.zybox.cc/zybox/css/zybox.css" rel="stylesheet" type="text/css" />
+<link href="https://img.zybox.cc/zybox/css/monokai-sublime.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="https://img.zybox.cc/zybox/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://img.zybox.cc/zybox/js/jquery.sgallery.js"></script>
+<script type="text/javascript" src="https://img.zybox.cc/zybox/js/highlight.pack.js"></script>
+<script type="text/javascript" src="https://img.zybox.cc/zybox/js/highlightjs-line-numbers.js"></script>
+<style>
+    #pop_ad{display:none !important;}
+    #feedAv{position: fixed!important;left:-9999999px!important;}
+    #MZAD_POP_PLACEHOLDER{position: fixed!important;left:-9999999px!important;}
+    td.hljs-ln-numbers {
+			text-align: center;
+			color: #ccc;
+			border-right: 1px solid #999;
+			vertical-align: top;
+			padding-right: 5px;
+
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		td.hljs-ln-code {
+			padding-left: 10px;
+		}
+
+		code {
+			white-space: pre-wrap;
+			overflow: auto;
+		}
+</style>
+</head>
+<body>
+	<div class="zybox_top">
+		<div class="w1 clear">
+			<div class="logo">
+				<a href="http://www.zybox.cc">
+					<img src="https://img.zybox.cc/zybox/img/logo_1.png">				
+				</a>
+			</div>
+			<ul class="nav_ul clear">
+				<li>
+					<a href="/"  class="">首页</a>
+				</li>
+			    
+			    <li>
+			    	<a href="https://www.zybox.cc/jquery/">jquery插件</a>
+			    </li>
+			      
+			    <li>
+			    	<a href="https://www.zybox.cc/template/">织梦模板</a>
+			    </li>
+			      
+			    <li>
+			    	<a href="https://www.zybox.cc/Boutique/">商业织梦模板</a>
+			    </li>
+			      
+			    <li>
+			    	<a href="https://www.zybox.cc/ppt/">PPT模板</a>
+			    </li>
+			      
+			    <li>
+			    	<a href="https://www.zybox.cc/plugIn/">织梦插件</a>
+			    </li>
+			      <li><a href='https://www.zybox.cc/tutorial/' class='on'>织梦教程</a></li>
+			    <li>
+			    	<a href="https://www.zybox.cc/IT/">IT资讯</a>
+			    </li>
+			      
+			</ul>
+	        <div class="search">
+	            <div class="s_s">
+	                <form action="https://www.zybox.cc/plus/search.php" method="get" target="_blank" name="formsearch" id="search">
+				        <input type="hidden" name="kwtype" value="0" />
+				        <input type="text" name="q" size="48" id="q" class="txt-input" value="请输入关键字…" onfocus="this.value = this.value == this.defaultValue ? '' : this.value" onblur="this.value = this.value == '' ? this.defaultValue : this.value" />
+				        <input type="submit" name="s" id="button" value="搜 索" class="btn" />
+				    </form>
+	            </div>
+	        </div>
+    	</div>
+    </div>
+    <div class="in_cd ">
+    	<div class=" w1">
+			<div class="in_er_ys nav_e w1 clear">
+      			
+			</div>	           
+    	</div>
+    </div>    	
+	<div class="main">
+		<div class="col-left ">
+  			<div class="box">
+  				<div class="crumbs"> 当前位置：<a href='https://www.zybox.cc/'>主页</a> > <a href='https://www.zybox.cc/tutorial/'>织梦教程</a> > </div>
+      			<div class="h1"><h1>静态页面H5页面如果调用微信JS-SDK进行自定义内容分享</h1>
+      				<div class="p">
+栏目分类：<a href="https://www.zybox.cc/tutorial/" title="织梦教程" class="lm"   target="_blank">织梦教程</a>&nbsp;&nbsp;&nbsp;发布日期：2019-02-23&nbsp;&nbsp;&nbsp;来源：www.zybox.cc&nbsp;&nbsp;&nbsp;浏览次数：<span id="hits"><script src="https://www.zybox.cc/plus/count.php?view=yes&aid=1504&mid=1"type='text/javascript' language="javascript"></script></span>次    			
+      				</div>
+    			</div>
+    		<div id="Article">
+		    	<!--div class="cn_img">
+		      		<img src="https://www.zybox.cchttps://img.zybox.cc/uploads/190223/1-1Z22314501X54.jpg" alt="静态页面H5页面如果调用微信JS-SDK进行自定义内容分享">
+		        </div-->      
+		      	<div class="content_zw">
+		      		
+		        	<div class="cjms">
+		        		最近在给朋友手机站做一个手机静态页面，朋友要求能在微信中自定义分享的内容，百度有各种相关文章，翻了很多页也没找到一个能详细阐述的文章，站长爬了微信官方技术文档，同时也爬了
+		        	</div>
+		        	<div>
+		        		<p><span style="font-size: 18px;">背景</span></p><p><br/></p><p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp; 最近在给朋友手机站做一个手机静态页面，朋友要求能在微信中自定义分享的内容，百度有各种相关文章，翻了很多页也没找到一个能详细阐述的文章，站长爬了</span><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1445241432" target="_self" style="font-size: 18px; text-decoration: underline;"><span style="font-size: 18px;">微信官方技术文档</span></a><span style="font-size: 18px;">，同时也爬了很多相关文章，结合后就有了如下的文章。</span></p><p><br/></p><p><span style="font-size: 18px;">前提</span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用本文教程，必须满足几个条件：1、项目域名必须备案（想要使用微信的接口都必须要域名是备案的） &nbsp;2、认证过的公众号 &nbsp; &nbsp;3、能运行PHP文件的环境<br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;满足上面几个条件的话，请接着往下看：<br/></span></p><p><br/></p><p><span style="font-size: 18px;">教程<br/></span></p><p><br/></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px; color: rgb(0, 176, 80);">第一步</span><br/></span></p><p><br/></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下载相关代码文件 &nbsp;&nbsp;</span><a href="https://pan.baidu.com/s/1KpW0UH0lwsHnaB3CjGF7xA" target="_self" title="网页调用微信js-sdk分享接口(1.4.0)" textvalue="网页调用微信js-sdk分享接口(1.4.0)" style="font-size: 18px; text-decoration: underline;"><span style="font-size: 18px;">网页调用微信js-sdk分享接口(1.4.0)</span></a><span style="font-size: 18px;"> &nbsp; &nbsp; &nbsp;提取码：s8ep&nbsp;</span></p><p><br/></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px; color: rgb(0, 176, 80);">第二步</span><br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将上步下载的accessToken文件夹上传网站目录中（路径自定义）</span></p><p><br/></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px; color: rgb(0, 176, 80);">&nbsp;第三步</span><br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登录微信公众号平台（需要有认证的公众号）<br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、设置-公众号设置-功能设置-JS接口安全域名（域名需要备案的）</span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如图：</span></p><p style="text-align: center;"><img src="http://img.zybox.cc/15509051782.png" title="uploads/ueditor/2019-02-23/155090428510.png" alt="image.png"/></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;2、开发-基本设置-IP白名单（添加IP白名单后才能调用接口）<br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如图：<br/></span></p><p style="text-align: center;"><img src="http://img.zybox.cc/15509051786.png" title="uploads/ueditor/2019-02-23/15509043646.png" alt="image.png"/></p><p><br/></p><p><span style="font-size: 18px;">&nbsp; &nbsp; &nbsp; &nbsp;</span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px; color: rgb(0, 176, 80);">第四步</span><br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进入<span style="font-size: 18px;">accessToken文件夹，打开signPackage.php，将微信公众号的AppID、AppSecret填入对应的位置</span></span></p><p><span style="font-size: 18px;"><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;示例代码：<br/></span></span></p><pre class="brush:php;toolbar:false">&lt;?php
+	//&nbsp;实现微信分享功能
+	//&nbsp;通过script标签引入该文件，通过url参数传递原网页的完整url
+	error_reporting(0);
+	$queryString&nbsp;=&nbsp;$_SERVER[&quot;QUERY_STRING&quot;];//&nbsp;获取PHP后的网址参数，格式为：originUrl=...
+	$url&nbsp;=&nbsp;substr($queryString,10);	//&nbsp;截取原网页的完整url
+	
+	require_once&nbsp;&quot;jssdk.php&quot;;
+	$jssdk&nbsp;=&nbsp;new&nbsp;JSSDK(&quot;AppID&quot;,&nbsp;&quot;AppSecret&quot;,&nbsp;$url);//&nbsp;改为自己公众号的AppID、AppSecret
+	$signPackage&nbsp;=&nbsp;$jssdk-&gt;GetSignPackage();
+	echo&nbsp;&quot;var&nbsp;signPackage=&quot;;
+&nbsp;	die(json_encode($signPackage));//&nbsp;返回微信分享所需参数
+&nbsp;?&gt;</pre><p><span style="font-size: 18px;"><span style="font-size: 18px;"></span></span><br/></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 18px; color: rgb(0, 176, 80);">第五步</span><br/></span></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在需要调用微信自定义分享接口的html页面添加如下代码</span></p><pre class="brush:php;toolbar:false">&lt;script&nbsp;src=&quot;https://res.wx.qq.com/open/js/jweixin-1.4.0.js&quot;&gt;&lt;/script&gt;&nbsp;
+&lt;script&gt;document.write(&quot;&lt;script&nbsp;src=&#39;accessToken/signPackage.php?originUrl=&quot;&nbsp;+&nbsp;window.location.href&nbsp;+&nbsp;&quot;&#39;&nbsp;type=&#39;text/javascript&#39;&gt;&lt;\/script&gt;&quot;);&lt;/script&gt;
+&lt;script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;baseUrl&nbsp;=&nbsp;&quot;https://www.abc.com/&quot;;
+&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;wxData&nbsp;=&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;imgUrl&quot;&nbsp;:&nbsp;baseUrl&nbsp;+&nbsp;&#39;logo.png&#39;,//分享缩略图
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;link&quot;&nbsp;&nbsp;&nbsp;:&nbsp;baseUrl&nbsp;+&nbsp;&#39;welcome.html&#39;,//分享的链接
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;title&quot;&nbsp;&nbsp;:&nbsp;&#39;接单：网站，公众号，小程序等业务&#39;,//分享朋友标题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;title2&quot;&nbsp;&nbsp;:&nbsp;&#39;QQ：345823660&#39;,//分享朋友圈标题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;desc&quot;&nbsp;&nbsp;&nbsp;:&nbsp;&#39;价格美丽&#39;//分享朋友的文案
+&nbsp;&nbsp;&nbsp;&nbsp;};
+&nbsp;&nbsp;&nbsp;&nbsp;wx.config({
+&nbsp;&nbsp;&nbsp;&nbsp;debug:&nbsp;false,
+&nbsp;&nbsp;&nbsp;&nbsp;appId:&nbsp;signPackage.appId,
+&nbsp;&nbsp;&nbsp;&nbsp;timestamp:&nbsp;parseInt(signPackage.timestamp),
+&nbsp;&nbsp;&nbsp;&nbsp;nonceStr:&nbsp;signPackage.nonceStr,
+&nbsp;&nbsp;&nbsp;&nbsp;signature:&nbsp;signPackage.signature,
+&nbsp;&nbsp;&nbsp;&nbsp;jsApiList:&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&#39;onMenuShareTimeline&#39;,
+&nbsp;&nbsp;&nbsp;&nbsp;&#39;onMenuShareAppMessage&#39;
+&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;wx.ready(function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;wx.onMenuShareTimeline({
+&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;wxData.title2,
+&nbsp;&nbsp;&nbsp;&nbsp;link:&nbsp;wxData.link,
+&nbsp;&nbsp;&nbsp;&nbsp;imgUrl:&nbsp;wxData.imgUrl,
+&nbsp;&nbsp;&nbsp;&nbsp;success:&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;wx.onMenuShareAppMessage({
+&nbsp;&nbsp;&nbsp;&nbsp;title:&nbsp;wxData.title,
+&nbsp;&nbsp;&nbsp;&nbsp;desc:&nbsp;wxData.desc,
+&nbsp;&nbsp;&nbsp;&nbsp;link:&nbsp;wxData.link,
+&nbsp;&nbsp;&nbsp;&nbsp;imgUrl:&nbsp;wxData.imgUrl,
+&nbsp;&nbsp;&nbsp;&nbsp;type:&nbsp;&#39;link&#39;,
+&nbsp;&nbsp;&nbsp;&nbsp;dataUrl:&nbsp;&#39;&#39;,
+&nbsp;&nbsp;&nbsp;&nbsp;success:&nbsp;function&nbsp;()&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&nbsp;&nbsp;&nbsp;&nbsp;});
+&lt;/script&gt;</pre><p><span style="font-size: 18px;"></span><br/></p><p><br/></p><p><span style="font-size: 18px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DEMO演示地址</span></p><p><img src="http://img.zybox.cc/15509051785.png"/></p>
+		        		<script type="text/javascript" src="//bd1.zybox.cc/uphlevmhv.js"></script>
+		        	</div>
+		      	</div>
+		      	<script type="text/javascript">
+					SyntaxHighlighter.all();
+				</script>
+		      	<div class=" dol">
+		            <!--a href='' target='_blank'>立即下载</a-->  
+		            <div id="cyReward" role="cylabs" data-use="reward">打赏本站</div>
+		            <!--span class="pwd">密码：</span-->
+		        </div>
+	        	<div class="xg_rc">
+		        	<div class="bdsharebuttonbox" data-tag="share_1" style="float:right;">
+		        		<div class="bdsharebuttonbox">
+		        			<a href="#" class="bds_more" data-cmd="more"></a>
+		        			<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+		        			<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+		        			<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+		        			<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+		        			<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+		        		</div>						
+		        	</div>
+		        	<p class="p">
+		        		<strong>标签：</strong>
+		        		 <a href='http://www.zybox.cc/tag/weixinJS_SDK_2095_1.html' target=_blank title='微信JS-SDK'><strong>微信JS-SDK</strong></a>  <a href='http://www.zybox.cc/tag/weixinzidingyinarongfenxiang_2096_1.html' target=_blank title='微信自定义内容分享'><strong>微信自定义内容分享</strong></a>  <a href='http://www.zybox.cc/tag/weixinjingtaiyemiandiaoyongJS_SDK_2097_1.html' target=_blank title='微信静态页面调用JS-SDK'><strong>微信静态页面调用JS-SDK</strong></a> 
+		        	</p>
+	        	</div>
+    		</div>
+<!--    	<div class="bk10"></div>-->
+      	</div>
+    <!--<div class="bk20"></div>-->
+  	<div class="x_g clear">
+    	<div class="lef_s">上一篇：<a href='https://www.zybox.cc/tutorial/1502.html'>php跨域解决办法，load()跨域解决办法</a> </div>
+        <div class="rig_s">下一篇：<a href='https://www.zybox.cc/tutorial/1505.html'>本地安装的网站如何能通过外网进行访问</a> </div>
+    </div>
+                <div class="bk20"></div>
+    <div class="box">
+    	
+      <h5 class="xgxz_x">相关下载</h5>
+        <ul id='list_li_j' class="list_li_j clear">
+        
+            <li id="union3"><script type="text/javascript" src="//bd1.zybox.cc/ytlpizilu.js"></script><p class="p clear" style="margin-top: -10px;"><span class="span"><a href="http://www.zybox.cc"  target="_blank"  title="织梦模板">织梦模板</a></span>2018</p></li>
+	            <li id="union4"><script type="text/javascript" src="//bd1.zybox.cc/rmeibsivs.js"></script><p class="p clear" style="margin-top: -10px;"><span class="span"><a href="http://www.zybox.cc"  target="_blank"  title="织梦模板">织梦模板</a></span>2018</p></li>
+          </ul>
+       </div>
+        <div class="bk20"></div>
+		<!--<div class="gg_gg">
+		<!-- 文章底部广告 
+		</div>-->
+     <div class="bk20"></div>
+      <div class="box duoshuo">
+	   <!--PC版-->
+<div id="SOHUCS" sid="1504" ></div>
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cysN3RDGp',
+conf: 'prod_ca001110452fd0087c2806871d84c722'
+});
+</script>
+    </div>
+</div>
+<div class="col-auto">
+		<div class="gg_300250">
+		<!-- 右侧广告位1 -->
+        <script type="text/javascript" src="//bd1.zybox.cc/togkdukgu.js"></script>
+		</div>
+  <div class="box">
+            <h5 class="title-2">热门下载</h5>
+            
+			<dl class="digg lmtj">
+				    <div id='tag81704c9aedcd7b363a974af57db81708'>
+<dd>
+					<a href="https://www.zybox.cc/tutorial/1470.html" target="_blank" class="margin10_r" title="织梦一级栏目设置为外链后，导航无法显示的终极解决办法|织梦设置外部链接后就不显示分类">
+						<img height="65" width="100" src="https://www.zybox.cc/images/defaultpic.gif" alt="织梦一级栏目设置为外链后，导航无法显示的终极解决办法|织梦设置外部链接后就不显示分类"/>
+					</a>
+					<a href="https://www.zybox.cc/tutorial/1470.html" target="_blank">织梦一级栏目设置为外链后，导航无法显示的终极解决办法|织梦设置外部链接后就不显示分类</a>
+					<p class="xx">类别：
+						<a href="<a href='https://www.zybox.cc/tutorial/'>织梦教程</a>" title="织梦教程"  target="_blank">织梦教程</a>
+					</p>
+				</dd>
+<dd>
+					<a href="https://www.zybox.cc/Boutique/77.html" target="_blank" class="margin10_r" title="高端医疗健康DedeCMS整站模板(带手机端)-zybox.cc出品">
+						<img height="65" width="100" src="https://img.zybox.cc/uploads/ueditor/2017-4-28/149334781400080.png" alt="高端医疗健康DedeCMS整站模板(带手机端)-zybox.cc出品"/>
+					</a>
+					<a href="https://www.zybox.cc/Boutique/77.html" target="_blank">高端医疗健康DedeCMS整站模板(带手机端)-zybox.cc出品</a>
+					<p class="xx">类别：
+						<a href="<a href='https://www.zybox.cc/Boutique/'>商业织梦模板</a>" title="商业织梦模板"  target="_blank">商业织梦模板</a>
+					</p>
+				</dd>
+<dd>
+					<a href="https://www.zybox.cc/jquery/layout/111.html" target="_blank" class="margin10_r" title="HTML后台系统框架Materialize Material设计后台模板">
+						<img height="65" width="100" src="https://img.zybox.cc/uploads/ueditor/2017-5-26/149577395300062.png" alt="HTML后台系统框架Materialize Material设计后台模板"/>
+					</a>
+					<a href="https://www.zybox.cc/jquery/layout/111.html" target="_blank">HTML后台系统框架Materialize Material设计后台模板</a>
+					<p class="xx">类别：
+						<a href="<a href='https://www.zybox.cc/jquery/layout/'>页面布局</a>" title="页面布局"  target="_blank">页面布局</a>
+					</p>
+				</dd>
+<dd>
+					<a href="https://www.zybox.cc/tutorial/120.html" target="_blank" class="margin10_r" title="织梦DEDE include/dedesql.class.php变量覆盖漏洞_解决方案">
+						<img height="65" width="100" src="https://www.zybox.cc/images/defaultpic.gif" alt="织梦DEDE include/dedesql.class.php变量覆盖漏洞_解决方案"/>
+					</a>
+					<a href="https://www.zybox.cc/tutorial/120.html" target="_blank">织梦DEDE include/dedesql.class.php变量覆盖漏洞_解决方案</a>
+					<p class="xx">类别：
+						<a href="<a href='https://www.zybox.cc/tutorial/'>织梦教程</a>" title="织梦教程"  target="_blank">织梦教程</a>
+					</p>
+				</dd>
+<dd>
+					<a href="https://www.zybox.cc/Boutique/55.html" target="_blank" class="margin10_r" title="响应式高端企业集团类织梦模板(自适应手机端)-zybox.cc出品	">
+						<img height="65" width="100" src="https://img.zybox.cc/uploads/ueditor/2017-4-11/149188503700056.jpg" alt="响应式高端企业集团类织梦模板(自适应手机端)-zybox.cc出品	"/>
+					</a>
+					<a href="https://www.zybox.cc/Boutique/55.html" target="_blank">响应式高端企业集团类织梦模板(自适应手机端)-zybox.cc出品	</a>
+					<p class="xx">类别：
+						<a href="<a href='https://www.zybox.cc/Boutique/'>商业织梦模板</a>" title="商业织梦模板"  target="_blank">商业织梦模板</a>
+					</p>
+				</dd>
+    </div>
+
+            </dl>
+			</div>
+			<div class="gg_300250">
+			<!-- 右侧广告位2 -->
+	        <script type="text/javascript" src="//bd1.zybox.cc/vqimfwmif.js"></script>
+			</div>
+        <div class="box tag_rm clear">
+            <h5 class="title-2">热门关键词</h5>
+            <div class="taglist" id="tags">           	 
+	    		
+		        <a href="https://www.zybox.cc/tag/FLEXSLIDER_16_1.html" title="FLEXSLIDER">FLEXSLIDER</a>
+		        
+		        <a href="https://www.zybox.cc/tag/EASY_SLIDER_15_1.html" title="EASY SLIDER">EASY SLIDER</a>
+		        
+		        <a href="https://www.zybox.cc/tag/EASY_SLIDER__14_1.html" title="EASY SLIDER，">EASY SLIDER，</a>
+		        
+		        <a href="https://www.zybox.cc/tag/lunbotu_13_1.html" title="轮播图">轮播图</a>
+		        
+		        <a href="https://www.zybox.cc/tag/SKITTER_12_1.html" title="SKITTER">SKITTER</a>
+		        
+		        <a href="https://www.zybox.cc/tag/huandengpian_11_1.html" title="幻灯片">幻灯片</a>
+		        
+		        <a href="https://www.zybox.cc/tag/SLIDESJS_10_1.html" title="SLIDESJS">SLIDESJS</a>
+		        
+		        <a href="https://www.zybox.cc/tag/xuanku_9_1.html" title="炫酷">炫酷</a>
+		        
+		        <a href="https://www.zybox.cc/tag/zishiying_17_1.html" title="自适应">自适应</a>
+		        
+		        <a href="https://www.zybox.cc/tag/zishiyingtupian_18_1.html" title="自适应图片">自适应图片</a>
+		        
+		        <a href="https://www.zybox.cc/tag/lunbochajian_19_1.html" title="轮播插件">轮播插件</a>
+		        
+		        <a href="https://www.zybox.cc/tag/CAROUSEL_20_1.html" title="CAROUSEL">CAROUSEL</a>
+		        
+		        <a href="https://www.zybox.cc/tag/zhimengmoban_21_1.html" title="织梦模板">织梦模板</a>
+		        
+		        <a href="https://www.zybox.cc/tag/bokemoban_22_1.html" title="博客模板">博客模板</a>
+		        
+		        <a href="https://www.zybox.cc/tag/kejilei_23_1.html" title="科技类">科技类</a>
+		        
+		        <a href="https://www.zybox.cc/tag/zimeiti_24_1.html" title="自媒体">自媒体</a>
+		        
+		        <a href="https://www.zybox.cc/tag/jianjie_25_1.html" title="简洁">简洁</a>
+		        
+		        <a href="https://www.zybox.cc/tag/qingxin_26_1.html" title="清新">清新</a>
+		        
+		        <a href="https://www.zybox.cc/tag/qingliangji_27_1.html" title="轻量级">轻量级</a>
+		        
+		        <a href="https://www.zybox.cc/tag/CRAFTYSLIDE_28_1.html" title="CRAFTYSLIDE">CRAFTYSLIDE</a>
+		        
+		        <a href="https://www.zybox.cc/tag/wenzicaidan_29_1.html" title="文字菜单">文字菜单</a>
+		        
+		        <a href="https://www.zybox.cc/tag/texiao_30_1.html" title="特效">特效</a>
+		        
+		        <a href="https://www.zybox.cc/tag/caidantexiao_31_1.html" title="菜单特效">菜单特效</a>
+		        
+		        <a href="https://www.zybox.cc/tag/CSS3_32_1.html" title="CSS3">CSS3</a>
+		        
+		        <a href="https://www.zybox.cc/tag/TRANSITIONS_33_1.html" title="TRANSITIONS">TRANSITIONS</a>
+		        
+		        <a href="https://www.zybox.cc/tag/qingxinjianjie_34_1.html" title="清新简洁">清新简洁</a>
+		        
+		        <a href="https://www.zybox.cc/tag/HTML5huandengpian_35_1.html" title="HTML5幻灯片">HTML5幻灯片</a>
+		        
+		        <a href="https://www.zybox.cc/tag/SLIDESHOW_36_1.html" title="SLIDESHOW">SLIDESHOW</a>
+		        
+		        <a href="https://www.zybox.cc/tag/CANVAS_37_1.html" title="CANVAS">CANVAS</a>
+		        
+		        <a href="https://www.zybox.cc/tag/gexing_38_1.html" title="个性">个性</a>
+		        
+	        </div>
+        </div>
+		<div class="gg_300250">
+			<!-- 右侧广告位3 -->
+	        <script type="text/javascript" src="//bd1.zybox.cc/dyquneuqg.js"></script>
+		</div>
+        <div class="box">
+            <h5 class="title-2">最新更新</h5>
+            <ul class="content rank">
+            	    <div id='tagf700a2f0f028f0383f119c07843b3607'>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1507.html" target="_blank" class="margin10_r" title="织梦内容模型新增图片自定义字段调用出现{dede:img text='' width='' height=''}的解决办法">织梦内容模型新增图片自定义字段调用出现{dede:img text='' width='' height=''}的解决办法</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1505.html" target="_blank" class="margin10_r" title="本地安装的网站如何能通过外网进行访问">本地安装的网站如何能通过外网进行访问</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1504.html" target="_blank" class="margin10_r" title="静态页面H5页面如果调用微信JS-SDK进行自定义内容分享">静态页面H5页面如果调用微信JS-SDK进行自定义内容分享</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1470.html" target="_blank" class="margin10_r" title="织梦一级栏目设置为外链后，导航无法显示的终极解决办法|织梦设置外部链接后就不显示分类">织梦一级栏目设置为外链后，导航无法显示的终极解决办法|织梦设置外部链接后就不显示分类</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1502.html" target="_blank" class="margin10_r" title="php跨域解决办法，load()跨域解决办法">php跨域解决办法，load()跨域解决办法</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1501.html" target="_blank" class="margin10_r" title="织梦自定义表单ajax提交及弹窗提示">织梦自定义表单ajax提交及弹窗提示</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1487.html" target="_blank" class="margin10_r" title="修改织梦tag标签的长度">修改织梦tag标签的长度</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1473.html" target="_blank" class="margin10_r" title="织梦启用https后调用缩率图出现域名重复的最终解决办法">织梦启用https后调用缩率图出现域名重复的最终解决办法</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1472.html" target="_blank" class="margin10_r" title="织梦(dedecms)后台删除文章后台还有分页显示解决方法">织梦(dedecms)后台删除文章后台还有分页显示解决方法</a>					
+				</li>
+<li>
+					<a href="https://www.zybox.cc/tutorial/1471.html" target="_blank" class="margin10_r" title="网站邮箱地址，电话号码反爬虫cloudflare混淆加密">网站邮箱地址，电话号码反爬虫cloudflare混淆加密</a>					
+				</li>
+    </div>
+
+			</ul>
+        </div>
+    </div>
+</div>
+<div class="fot">
+		<div class="footer clear">
+			<div class="f_right">
+				<h3 class="h3">关于资源盒子</h3>
+				<p class="p">资源盒子素材网-整合国内外优质的资源，内容涉及js效果代码，平面设计素材，网页设计教程，cms建站，网页模版等领域，提供高质量的网站模板，织梦教程和设计素材供你参考学习。</p>
+			</div>
+			<div class="f_left ">
+				<h3 class="h3">版权声明</h3>
+				<p class="p">声明：本站发布的资源均来自互联网，仅供交流学习之用，请勿作商业用途，所有资源版权归原作者所有。如果有侵犯到您的权益，请联系本站删除，谢谢合作！<br>站长邮箱：admin#zybox.cc(#换@)</p>
+			</div>
+		</div>
+		<div class="fot_bo">
+			<div class="w1  ">
+				<span class=" col-right">Copyright &copy; 2014  <a href="https://www.zybox.cc">资源盒子</a> 版权所有<script>(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?ed3dad8c5fcdf03ea34001d5f8ce340a":"https://jspassport.ssl.qhimg.com/11.0.1.js?ed3dad8c5fcdf03ea34001d5f8ce340a";
+document.write(<script src=" + src + " id="sozz"><\/script>);
+})();
+</script>&nbsp;&nbsp;&nbsp;黔ICP备14004500号-3&nbsp;&nbsp;
+					<script>
+					var _hmt = _hmt || [];
+					(function() {
+					  var hm = document.createElement("script");
+					  hm.src = "https://hm.baidu.com/hm.js?3f90878b7462000ce3ba233cc4378d62";
+					  var s = document.getElementsByTagName("script")[0]; 
+					  s.parentNode.insertBefore(hm, s);
+					})();
+					</script>
+				</span>
+				 
+				<a href="https://www.zybox.cc/tags.html">TAG</a>
+			</div>
+		</div>
+	</div>
+	<div id="back-to-top" style="display: block;">
+		
+		<a href="#top" class="top_b">
+		<span></span>
+		</a>
+	</div>
+		<script type="text/javascript">
+    $(function(){
+        SyntaxHighlighter.highlight();
+        $("table.syntaxhighlighter").each(function () {
+            if (!$(this).hasClass("nogutter")) {
+                var $gutter = $($(this).find(".gutter")[0]);
+                var $codeLines = $($(this).find(".code .line"));
+                $gutter.find(".line").each(function (i) {
+                    $(this).height($($codeLines[i]).height());
+                    $($codeLines[i]).height($($codeLines[i]).height());
+                });
+            }
+        });
+    });
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<style>
+    #feedAv{display:none;}
+     .shut{cursor: pointer;float: right;margin-right: 20px;width: 30px;height: 30px;text-align: center;}
+</style>
+	<div id="shut-box" style="position: fixed;bottom:0;right: 1%;width: 300px;box-shadow: 0.5px 0.5px 3.5px rgba(46, 46, 46, 0.59);">
+	    <div style="line-height: 30px;padding-left: 15px;font-size: 15px;color: #fff;background: #0099ff;">
+	        <span>织梦标签工具下载</span>
+	        <span class="shut" id="shut">↑↓</span>
+    	 </div>
+    	 <div class="shut-img" style="height:170px;background:#fff;">
+    	     <a href="https://www.zybox.cc/zybox_dede.zip"><img src="https://www.zybox.cc/zybox/img/down.gif" alt="织梦标签工具下载" /></a>
+    	 </div>
+    </div>
+    <script>
+        $("#shut").click(function(){
+          $(".shut-img").slideToggle(1000);
+        });
+    </script> 
+<script type="text/javascript">
+    /*内容页图片*/
+    var cpro_id = "u3431327";
+</script>
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/i.js"></script>
+</body>
+</html>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","tsina","bdysc","weixin","tqq","kaixin001","tqf","tieba","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"],"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["weixin","sqq","tsina","tqq","qzone"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<script type="text/javascript">
+    var allpre = document.getElementsByTagName("pre");
+    for(i = 0; i < allpre.length; i++) 
+    {
+        var onepre = document.getElementsByTagName("pre")[i];
+        var mycode = document.getElementsByTagName("pre")[i].innerHTML;
+        onepre.innerHTML = '<code id="mycode">'+mycode+'</code>';
+    }
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+<script>
+	$(document).ready(function(){
+	    var n  = Math.floor(Math.random()*9+1);
+	    var n1 = Math.floor(Math.random()*9+1);
+        var list=document.getElementById("list_li_j");
+    	var listnode=list.getElementsByTagName("li");
+    	var node3=document.getElementById("union3");
+    	var node4=document.getElementById("union4");
+    	list.insertBefore(node3,listnode[n]);
+    	list.insertBefore(node4,listnode[n1]);
+	var tags_a = $("#tags").find("a");
+	tags_a.each(function(){
+		var x = 9;
+		var y = 0;
+		var rand = parseInt(Math.random() * (x - y + 1) + y);
+		$(this).addClass("size"+rand);
+	});
+	
+});
+</script>
+<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysN3RDGp"></script>

@@ -1,0 +1,50 @@
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html, body{ width:100%; height:100%; overflow:hidden; font-family:arial, '微软雅黑', "Microsoft Yahei", "Hiragino Sans GB", '宋体', Tahoma, Arial, Helvetica, 'STHeiti';} 
+
+
+h1{ font-size:1.5em; }
+
+.fixedIco, .fixedIco p::after{ 
+    -webkit-transition:all 200ms ease;
+    -moz-transition:all 200ms ease;
+    -o-transition:all 200ms ease;
+    -ms-transition:all 200ms ease;
+    transition:all 200ms ease 
+}
+
+@keyframes fixedAni{
+    0%{ transform:translate(-50%, -50%) scale( 1 ) ; opacity:.8; }
+    100%{ width:150px; height:150px; transform:translate(-50%, -50%) scale( 2 ); opacity:0; }
+} 
+
+.fixedIco{ position:fixed; right:1em; bottom:1em; width:50px; height:50px; background:#D72602; border-radius:5px; display:flex; align-items:center; justify-content:flex-start; }
+    .fixedIco.active{ width:280px; height:40px; box-shadow:0 0 1em #D72602; }
+    .fixedIco.active .head{ display:none; }
+
+    .fixedIco a{ color:white; text-decoration:none; display:block; }
+
+    .fixedIco .head{ cursor:pointer; width:70px; position:absolute; left:-10px;  height:70px; background:#D72602; border-radius:50%; display:flex; align-items:center; justify-content:center; background:white; border:solid 4px #D72602;}
+        .fixedIco .head img{ width:80%; }
+
+    .fixedIco p{ color:white; text-shadow:0 0 1px rgba(0,0,0,.5); flex:1;  text-align:center; opacity:0; visibility:hidden; height:100%; line-height:40px; overflow:hidden; font-weight: 700; }
+        .fixedIco p::after{ display:block; content:''; position:absolute; width:0; height:0; opacity:0; border-radius:50%; background:white; left:50%; top:50%;
+            -webkit-animation:fixedAni 1.5s ease infinite; 
+            animation:fixedAni 1.5s ease infinite; 
+            -webkit-animation-fill-mode:forwards;
+            animation-fill-mode:forwards;
+            pointer-events:none;
+        }
+        .fixedIco p::before{ display:block; content:''; position:absolute; width:0; height:0; opacity:0; border-radius:50%; background:white; left:50%; top:50%;
+            -webkit-animation:fixedAni 1s ease infinite; 
+            animation:fixedAni 1s ease infinite; 
+            -webkit-animation-fill-mode:forwards;
+            animation-fill-mode:forwards;
+            pointer-events:none;
+        }
+
+    .fixedIco.active p{ opacity:1; visibility:visible; }
+
+    .closeBtn{ color:gray;display:none; cursor:pointer; background:red; position:absolute; right:-1em; top:-1em; width:14px; height:14px; line-height:14px; font-size:.8em; text-align:center; border-radius:50%; color:white; opacity:.7; }
+        .closeBtn.active{ display:block; }
+        .closeBtn:hover{ opacity:1; }
