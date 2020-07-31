@@ -88,10 +88,14 @@ uploadfile();
 	print_r(json_encode_ex($info));
 	$str=json_encode_ex($data);
 	$file = "changeimg.json";
+	if(false===file_exists($file)){
 		//$msg = serialize($str);
 		$fp = fopen($file,"w");
 		fputs($fp,$str);
 		fclose($fp);
+	}else{
+		file_put_contents($file,$str,FILE_APPEND);
+	}
 	
 }
 
